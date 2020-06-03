@@ -10,13 +10,15 @@
 		E056E0B324856FD700537C23 /* ObsMessageHandler.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E056E0B224856FD700537C23 /* ObsMessageHandler.hpp */; };
 		E056E0B524856FD700537C23 /* ObsMessageHandlerPriv.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E056E0B424856FD700537C23 /* ObsMessageHandlerPriv.hpp */; };
 		E056E0B724856FD800537C23 /* ObsMessageHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E056E0B624856FD800537C23 /* ObsMessageHandler.cpp */; };
+		E056E0E32486DC0500537C23 /* libjsoncpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E056E0E22486DC0500537C23 /* libjsoncpp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E056E0AF24856FD700537C23 /* libObsMessageHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObsMessageHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E056E0AF24856FD700537C23 /* libObsMessageHandler.app */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObsMessageHandler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E056E0B224856FD700537C23 /* ObsMessageHandler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ObsMessageHandler.hpp; sourceTree = "<group>"; };
 		E056E0B424856FD700537C23 /* ObsMessageHandlerPriv.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ObsMessageHandlerPriv.hpp; sourceTree = "<group>"; };
 		E056E0B624856FD800537C23 /* ObsMessageHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ObsMessageHandler.cpp; sourceTree = "<group>"; };
+		E056E0E22486DC0500537C23 /* libjsoncpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjsoncpp.a; path = "../../Programming_Files/c++_Library/jsoncpp_x64-osx/lib/libjsoncpp.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E056E0E32486DC0500537C23 /* libjsoncpp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,13 +38,14 @@
 			children = (
 				E056E0B124856FD700537C23 /* ObsMessageHandler */,
 				E056E0B024856FD700537C23 /* Products */,
+				E056E0E12486DC0500537C23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E056E0B024856FD700537C23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E056E0AF24856FD700537C23 /* libObsMessageHandler.a */,
+				E056E0AF24856FD700537C23 /* libObsMessageHandler.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +58,14 @@
 				E056E0B624856FD800537C23 /* ObsMessageHandler.cpp */,
 			);
 			path = ObsMessageHandler;
+			sourceTree = "<group>";
+		};
+		E056E0E12486DC0500537C23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E056E0E22486DC0500537C23 /* libjsoncpp.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,7 +97,7 @@
 			);
 			name = ObsMessageHandler;
 			productName = ObsMessageHandler;
-			productReference = E056E0AF24856FD700537C23 /* libObsMessageHandler.a */;
+			productReference = E056E0AF24856FD700537C23 /* libObsMessageHandler.app */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -245,9 +257,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_EXTENSION = app;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(Library_Folder)/boost_1_73_0/",
+					"$(Library_Folder)/jsoncpp_x64-osx/include/json/",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(Library_Folder)/boost_1_73_0/libs/",
+					"$(Library_Folder)/jsoncpp_x64-osx/lib/",
+				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -260,6 +282,14 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(Library_Folder)/boost_1_73_0/",
+					"$(Library_Folder)/jsoncpp_x64-osx/include/json/",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(Library_Folder)/boost_1_73_0/libs/",
+					"$(Library_Folder)/jsoncpp_x64-osx/lib/",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -275,7 +305,7 @@
 				E056E0B924856FD800537C23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		E056E0BA24856FD800537C23 /* Build configuration list for PBXNativeTarget "ObsMessageHandler" */ = {
 			isa = XCConfigurationList;
@@ -284,7 +314,7 @@
 				E056E0BC24856FD800537C23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

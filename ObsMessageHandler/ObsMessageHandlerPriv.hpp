@@ -12,7 +12,6 @@
 class ObsMessageHandlerPriv
 {
     public:
-    void HelloWorldPriv(const char *);
 };
 
 #pragma GCC visibility pop
